@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -26,18 +27,13 @@ public class PieceViewController implements Initializable {
     @FXML private AnchorPane anchorPane;
     
     @FXML private TextField titleTextField;
-
     @FXML private TextField composerTextField;
-
     @FXML private TextField genreTextField;
-
     @FXML private TextField yearPublishedField;
-
     @FXML private ComboBox<String> periodComboBox;
-
-    @FXML private TextField lengthField;
-    
-    @FXML private ImageView imageView;
+    @FXML private TextField lengthField;    
+    @FXML private ImageView imageView;   
+    @FXML private Button submitPieceButton;
 
     /**
      * Initializes the controller class.
@@ -45,7 +41,7 @@ public class PieceViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        Piece piece = new Piece();
+        //Piece piece = new Piece();
         // Configure the PeriodBox
         List periods = Arrays.asList(
                 "Medieval", "Renaissance", "Baroque", "Classical", "Romantic", "Modern");
@@ -53,6 +49,18 @@ public class PieceViewController implements Initializable {
         
         //updateImage();
     }  
+    
+    public void submitPieceButtonPushed()
+    {
+        Piece newPiece = new Piece(titleTextField.getText(),
+                                composerTextField.getText(),
+                                genreTextField.getText(),
+                                periodComboBox.getValue(),
+                                Integer.parseInt(yearPublishedField.getText()),                                
+                                Integer.parseInt(lengthField.getText())); 
+        
+        System.out.printf("%s", newPiece.toString());
+    }
     
 /*    public void updateTitleTextField() 
     {

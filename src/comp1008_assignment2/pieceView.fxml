@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" type="AnchorPane" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp1008_assignment2.PieceViewController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp1008_assignment2.PieceViewController">
     <stylesheets>
         <URL value="@pieceview.css" />
     </stylesheets>
@@ -78,9 +78,9 @@
             </GridPane>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Submit">
+                  <Button fx:id="submitPieceButton" mnemonicParsing="false" text="Submit Piece">
                      <HBox.margin>
-                        <Insets left="125.0" top="50.0" />
+                        <Insets left="105.0" top="50.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -98,4 +98,4 @@
          </children>
       </VBox>
    </children>
-</fx:root>
+</AnchorPane>

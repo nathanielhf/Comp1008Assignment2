@@ -30,9 +30,9 @@ public class Piece {
         setImage(new Image(getImageFileName()));
     }
 
-    Piece() {
+    /*Piece() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 
     public String getTitle() {
         return title;
@@ -114,6 +114,15 @@ public class Piece {
 
     private void setImage(Image image) {
         this.image = image;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return String.format("%s, by %s is a piece in the %s genre from the %s period."
+                            +" It is %d minutes long and was published in the year %d.",
+                            getTitle(), getComposer(), getGenre(), getPeriod(),
+                            getLengthInMinutes(), getPublishYear());
     }
     
     
