@@ -5,10 +5,14 @@
  */
 package comp1008_assignment2;
 
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Formatter;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -60,6 +64,26 @@ public class PieceViewController implements Initializable {
                                 Integer.parseInt(yearPublishedField.getText()));
         
         System.out.printf("%s", newPiece.toString());
+        
+        try {
+            printToFile(newPiece.toString());
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(PieceViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void printToFile(String newPiece) throws FileNotFoundException
+    {
+        //try
+        //{
+        Formatter outputStream = new Formatter("piece.txt");       
+        outputStream.format(newPiece + "%n");
+        outputStream.close();
+        //}
+        /*catch (FileNotFoundException e) 
+        {
+            Logger.getLogger(PieceViewController.class.getName()).log(Level.SEVERE, null, e);
+        }*/
     }
     
 /*    public void updateTitleTextField() 

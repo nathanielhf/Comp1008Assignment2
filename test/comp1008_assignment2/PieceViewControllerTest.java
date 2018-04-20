@@ -47,8 +47,6 @@ public class PieceViewControllerTest {
     @Test
     public void testInitialize() {
         
-        periodComboBox
-        
         
         
         System.out.println("initialize");
