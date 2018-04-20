@@ -74,29 +74,9 @@ public class PieceViewController implements Initializable {
     
     public void printToFile(String newPiece) throws FileNotFoundException
     {
-        //try
-        //{
         Formatter outputStream = new Formatter("piece.txt");       
         outputStream.format(newPiece + "%n");
         outputStream.close();
-        //}
-        /*catch (FileNotFoundException e) 
-        {
-            Logger.getLogger(PieceViewController.class.getName()).log(Level.SEVERE, null, e);
-        }*/
     }
-    
-/*    public void updateTitleTextField() 
-    {
-        if(titleTextField.)
-        {
-        }
-    }
-    
 
-    public void updateImage() 
-    {
-        
-    }
-*/
 }
