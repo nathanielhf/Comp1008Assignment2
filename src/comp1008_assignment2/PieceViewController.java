@@ -54,6 +54,7 @@ public class PieceViewController implements Initializable {
                 "Medieval", "Renaissance", "Baroque", "Classical", "Romantic", "Modern");
         periodComboBox.getItems().addAll(periods);
         
+        this.submitPieceButton.setText("Submit Piece");
         this.errorMessageLabel.setText("");
         //updateImage();
     }  
@@ -72,7 +73,7 @@ public class PieceViewController implements Initializable {
             System.out.printf("%s", newPiece.toString());
         
             
-            
+            this.submitPieceButton.setText("Submitted!");
             printToFile(newPiece.toString());
             
         }
