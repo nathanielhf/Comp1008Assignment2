@@ -27,7 +27,7 @@ public class Piece {
         setPeriod(period);
         setLengthInMinutes(lengthInMinutes);
         setPublishYear(publishYear);
-        setImage(new Image(getImageFileName()));
+        //setImage(new Image(getImageFileName()));
     }
 
     /*Piece() {
