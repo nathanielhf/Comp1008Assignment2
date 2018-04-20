@@ -56,8 +56,8 @@ public class PieceViewController implements Initializable {
                                 composerTextField.getText(),
                                 genreTextField.getText(),
                                 periodComboBox.getValue(),
-                                Integer.parseInt(yearPublishedField.getText()),                                
-                                Integer.parseInt(lengthField.getText())); 
+                                Integer.parseInt(lengthField.getText()),
+                                Integer.parseInt(yearPublishedField.getText()));
         
         System.out.printf("%s", newPiece.toString());
     }

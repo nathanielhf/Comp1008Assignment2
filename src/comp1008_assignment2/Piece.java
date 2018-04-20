@@ -82,8 +82,8 @@ public class Piece {
     }
 
     public void setLengthInMinutes(int length) throws IllegalArgumentException {
-        if(length <= 0 || length >= 1000)
-            throw new IllegalArgumentException("Please enter a value between 0 and 1000");
+        if(length < 1 || length > 1000)
+            throw new IllegalArgumentException("Please enter a value between 1 and 1000");
         else
             this.lengthInMinutes = length;
     }
@@ -102,7 +102,7 @@ public class Piece {
         else
             this.publishYear = publishYear;
     }
-    
+    /*
     public Image getImage()
     {
         return image;
@@ -115,11 +115,11 @@ public class Piece {
     private void setImage(Image image) {
         this.image = image;
     }
-    
+    */
     @Override
     public String toString()
     {
-        return String.format("%s, by %s is a piece in the %s genre from the %s period."
+        return String.format("%s by %s is a piece in the %s genre from the %s period."
                             +" It is %d minutes long and was published in the year %d.",
                             getTitle(), getComposer(), getGenre(), getPeriod(),
                             getLengthInMinutes(), getPublishYear());

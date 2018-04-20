@@ -313,4 +313,14 @@ public class PieceTest {
             System.out.println(e);
         }
     }
+    
+    @Test
+    public void testToString()
+    {
+        Piece testPiece = new Piece("Title", "Composer", "Genre", 
+                                    "Period", 100, 1500);
+        String expected = "Title by Composer is a piece in the Genre genre from the Period period."
+                            +" It is 100 minutes long and was published in the year 1500.";
+        assertEquals(expected, testPiece.toString());
+    }
 }
