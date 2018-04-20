@@ -58,7 +58,7 @@ public class PieceViewController implements Initializable {
         //updateImage();
     }  
     
-    public void submitPieceButtonPushed() throws IllegalArgumentException, FileNotFoundException
+    public void submitPieceButtonPushed() throws FileNotFoundException 
     {
         try
         {
@@ -72,11 +72,13 @@ public class PieceViewController implements Initializable {
             System.out.printf("%s", newPiece.toString());
         
             
+            
             printToFile(newPiece.toString());
             
         }
         catch (IllegalArgumentException e)
         {
+            System.out.printf("%s", e.getMessage());
             this.errorMessageLabel.setText(e.getMessage());
         }
     }
