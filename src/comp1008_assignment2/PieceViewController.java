@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -35,16 +36,22 @@ public class PieceViewController implements Initializable {
     @FXML private ComboBox<String> periodComboBox;
 
     @FXML private TextField lengthField;
+    
+    @FXML private ImageView imageView;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        Piece piece = new Piece();
         // Configure the PeriodBox
         List periods = Arrays.asList(
                 "Medieval", "Renaissance", "Baroque", "Classical", "Romantic", "Modern");
         periodComboBox.getItems().addAll(periods);
+        
+        //updateImage();
     }  
     
 /*    public void updateTitleTextField() 
@@ -53,5 +60,11 @@ public class PieceViewController implements Initializable {
         {
         }
     }
- */   
+    
+
+    public void updateImage() 
+    {
+        
+    }
+*/
 }

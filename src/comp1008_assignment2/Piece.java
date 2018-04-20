@@ -7,6 +7,7 @@ package comp1008_assignment2;
 
 import java.time.LocalDate;
 import java.time.Period;
+import javafx.scene.image.Image;
 
 /**
  *
@@ -17,6 +18,7 @@ public class Piece {
     // create instance variables
     private String title, composer, genre, period;
     private int lengthInMinutes, publishYear;
+    private Image image;
 
     public Piece(String title, String composer, String genre, String period, int lengthInMinutes, int publishYear) {
         setTitle(title);
@@ -25,6 +27,11 @@ public class Piece {
         setPeriod(period);
         setLengthInMinutes(lengthInMinutes);
         setPublishYear(publishYear);
+        setImage(new Image(getImageFileName()));
+    }
+
+    Piece() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getTitle() {
@@ -96,7 +103,18 @@ public class Piece {
             this.publishYear = publishYear;
     }
     
-    
+    public Image getImage()
+    {
+        return image;
+    }
+
+    private String getImageFileName() {
+        return String.format(("/images/%s.jpg"), getPeriod());
+    }
+
+    private void setImage(Image image) {
+        this.image = image;
+    }
     
     
 }

@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9" fx:controller="comp1008_assignment2.PieceViewController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="piece.PieceViewController">
     <stylesheets>
-        <URL value="@pieceview.css" />
+        <URL value="@piecesview.css" />
     </stylesheets>
    <children>
       <VBox layoutY="51.0" prefHeight="349.0" prefWidth="314.0">
@@ -94,7 +94,7 @@
       </HBox>
       <VBox layoutX="321.0" layoutY="51.0" prefHeight="349.0" prefWidth="278.0">
          <children>
-            <ImageView fitHeight="248.0" fitWidth="278.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageView" fitHeight="248.0" fitWidth="278.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </VBox>
    </children>
