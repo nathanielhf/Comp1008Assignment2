@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -38,6 +39,8 @@ public class PieceViewController implements Initializable {
     @FXML private TextField lengthField;    
     @FXML private ImageView imageView;   
     @FXML private Button submitPieceButton;
+    //error message function
+    @FXML private Label errorMessageLabel;
 
     /**
      * Initializes the controller class.
@@ -51,32 +54,43 @@ public class PieceViewController implements Initializable {
                 "Medieval", "Renaissance", "Baroque", "Classical", "Romantic", "Modern");
         periodComboBox.getItems().addAll(periods);
         
+        this.errorMessageLabel.setText("");
         //updateImage();
     }  
     
-    public void submitPieceButtonPushed()
+    public void submitPieceButtonPushed() throws IllegalArgumentException, FileNotFoundException
     {
-        Piece newPiece = new Piece(titleTextField.getText(),
-                                composerTextField.getText(),
-                                genreTextField.getText(),
-                                periodComboBox.getValue(),
-                                Integer.parseInt(lengthField.getText()),
-                                Integer.parseInt(yearPublishedField.getText()));
+        try
+        {
+            Piece newPiece = new Piece(titleTextField.getText(),
+                                    composerTextField.getText(),
+                                    genreTextField.getText(),
+                                    periodComboBox.getValue(),
+                                    Integer.parseInt(lengthField.getText()),
+                                    Integer.parseInt(yearPublishedField.getText()));
+
+            System.out.printf("%s", newPiece.toString());
         
-        System.out.printf("%s", newPiece.toString());
-        
-        try {
+            
             printToFile(newPiece.toString());
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(PieceViewController.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+        catch (IllegalArgumentException e)
+        {
+            this.errorMessageLabel.setText(e.getMessage());
         }
     }
     
     public void printToFile(String newPiece) throws FileNotFoundException
     {
-        Formatter outputStream = new Formatter("piece.txt");       
-        outputStream.format(newPiece + "%n");
-        outputStream.close();
+        try {
+            Formatter outputStream = new Formatter("piece.txt");       
+            outputStream.format(newPiece + "%n");
+            outputStream.close();
+        
+        } catch (FileNotFoundException ex) {
+                Logger.getLogger(PieceViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
 
 }

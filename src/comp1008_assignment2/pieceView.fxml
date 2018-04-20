@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp1008_assignment2.PieceViewController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="596.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp1008_assignment2.PieceViewController">
     <stylesheets>
         <URL value="@pieceview.css" />
     </stylesheets>
@@ -76,15 +76,20 @@
                   <Insets />
                </VBox.margin>
             </GridPane>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="65.0" prefWidth="314.0">
                <children>
                   <Button fx:id="submitPieceButton" mnemonicParsing="false" onAction="#submitPieceButtonPushed" text="Submit Piece">
                      <HBox.margin>
-                        <Insets left="105.0" top="50.0" />
+                        <Insets left="105.0" top="20.0" />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
+            <Label fx:id="errorMessageLabel" text="Error Message">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
          </children>
       </VBox>
       <HBox layoutX="-1.0" layoutY="1.0" prefHeight="42.0" prefWidth="600.0" AnchorPane.bottomAnchor="358.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -95,6 +100,7 @@
       <VBox layoutX="321.0" layoutY="51.0" prefHeight="349.0" prefWidth="278.0">
          <children>
             <ImageView fx:id="imageView" fitHeight="248.0" fitWidth="278.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox prefHeight="99.0" prefWidth="278.0" />
          </children>
       </VBox>
    </children>
