@@ -78,7 +78,7 @@
             </GridPane>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="submitPieceButton" mnemonicParsing="false" text="Submit Piece">
+                  <Button fx:id="submitPieceButton" mnemonicParsing="false" onAction="#submitPieceButtonPushed" text="Submit Piece">
                      <HBox.margin>
                         <Insets left="105.0" top="50.0" />
                      </HBox.margin>
