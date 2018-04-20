@@ -65,6 +65,8 @@ public class Piece {
     }
 
     public void setPeriod(String period) {
+        if(period.isEmpty())
+            throw new IllegalArgumentException("Enter the period");
         this.period = period;
     }
 
