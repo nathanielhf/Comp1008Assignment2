@@ -27,17 +27,21 @@ public class Piece {
         setPeriod(period);
         setLengthInMinutes(lengthInMinutes);
         setPublishYear(publishYear);
-        //setImage(new Image(getImageFileName()));
     }
-
-    /*Piece() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
-
+    
+    /**
+     * 
+     * @return String
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * Accepts String "title" as argument, throws exception if String is empty
+     * @param title
+     * @throws IllegalArgumentException 
+     */
     public void setTitle(String title) throws IllegalArgumentException{
         if(title.isEmpty())
             throw new IllegalArgumentException("Enter the title.");
@@ -45,10 +49,19 @@ public class Piece {
             this.title = title;
     }
 
+    /**
+     * 
+     * @return String
+     */
     public String getComposer() {
         return composer;
     }
 
+    /**
+     * Accepts String "composer" as argument, throws exception if String is empty
+     * @param composer
+     * @throws IllegalArgumentException 
+     */
     public void setComposer(String composer) throws IllegalArgumentException {
         if(composer.isEmpty())
             throw new IllegalArgumentException("Enter the composer.");
@@ -56,10 +69,19 @@ public class Piece {
             this.composer = composer;
     }
 
+    /**
+     * 
+     * @return String
+     */
     public String getGenre() {
         return genre;
     }
 
+    /**
+     * Accepts String "genre" as argument, throws exception if String is empty
+     * @param genre
+     * @throws IllegalArgumentException 
+     */
     public void setGenre(String genre) throws IllegalArgumentException {
         if(genre.isEmpty())
             throw new IllegalArgumentException("Enter the genre.");
@@ -71,6 +93,10 @@ public class Piece {
         return period;
     }
 
+    /**
+     * Accepts String 'period ' as argument, throws exception if String is empty
+     * @param period 
+     */
     public void setPeriod(String period) {
         if(period.isEmpty())
             throw new IllegalArgumentException("Enter the period");
@@ -81,6 +107,13 @@ public class Piece {
         return lengthInMinutes;
     }
 
+    /**
+     * Accepts int 'length' as argument, throws exception if 
+     * int is < 1 or > 1000
+     * Length is length of piece in minutes
+     * @param length
+     * @throws IllegalArgumentException 
+     */
     public void setLengthInMinutes(int length) throws IllegalArgumentException {
         if(length < 1 || length > 1000)
             throw new IllegalArgumentException("Please enter a value between 1 and 1000");
@@ -92,6 +125,13 @@ public class Piece {
         return publishYear;
     }
 
+    /**
+     * Accepts in "publishYear" as argument.
+     * Throws exception if year is lower than 500 
+     * or higher than one year from now (calculated with LocalDate methods)
+     * @param publishYear
+     * @throws IllegalArgumentException 
+     */
     public void setPublishYear(int publishYear) throws IllegalArgumentException {
         // allow for submission of pieces to be published within a year
         int oneYearFromNow = LocalDate.now().getYear()+1;
@@ -102,20 +142,11 @@ public class Piece {
         else
             this.publishYear = publishYear;
     }
-    /*
-    public Image getImage()
-    {
-        return image;
-    }
 
-    private String getImageFileName() {
-        return String.format(("/images/%s.jpg"), getPeriod());
-    }
-
-    private void setImage(Image image) {
-        this.image = image;
-    }
-    */
+    /**
+     * Returns formatted String containing all data of Piece object
+     * @return 
+     */
     @Override
     public String toString()
     {

@@ -22,6 +22,14 @@ public class PieceLaunch extends Application {
         launch(args);
     }
 
+    /**
+     * When program runs, method start() loads the FXML of GUI,
+     * creates new scene using fxml resource, 
+     * sets title and scene of new stage,
+     * then shows the stage
+     * @param primaryStage
+     * @throws Exception 
+     */
     @Override
     public void start(Stage primaryStage) throws Exception 
     {

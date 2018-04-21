@@ -29,8 +29,8 @@ import javafx.scene.layout.AnchorPane;
  */
 public class PieceViewController implements Initializable {
     
-    @FXML private AnchorPane anchorPane;
-    
+    // import FXML variables from FXML in SceneBuilder
+    @FXML private AnchorPane anchorPane;   
     @FXML private TextField titleTextField;
     @FXML private TextField composerTextField;
     @FXML private TextField genreTextField;
@@ -44,21 +44,29 @@ public class PieceViewController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * Populates the comboxBox object and sets text 
+     * of submitPieceButton and errorMessageLabel
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        //Piece piece = new Piece();
-        // Configure the PeriodBox
+        // Configure the PeriodBox with List of Strings
+        // containing broad periods of music history
         List periods = Arrays.asList(
                 "Medieval", "Renaissance", "Baroque", "Classical", "Romantic", "Modern");
         periodComboBox.getItems().addAll(periods);
         
         this.submitPieceButton.setText("Submit Piece");
         this.errorMessageLabel.setText("");
-        //updateImage();
     }  
     
+    /**
+     * Method runs when submitPieceButton is pushed in GUI
+     * Creates newPiece object with data from GUI
+     * prints newPiece as String
+     * and calls method printToFile with String
+     * @throws FileNotFoundException 
+     */
     public void submitPieceButtonPushed() throws FileNotFoundException 
     {
         try
@@ -84,6 +92,13 @@ public class PieceViewController implements Initializable {
         }
     }
     
+    /**
+     * Receives Piece object in String format,
+     * trys to output String to specified file
+     * and catches exception if fails
+     * @param newPiece
+     * @throws FileNotFoundException 
+     */
     public void printToFile(String newPiece) throws FileNotFoundException
     {
         try {

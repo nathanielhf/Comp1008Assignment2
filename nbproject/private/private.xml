@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/comp1008_assignment2/PieceViewController.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>65</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/nfisher/Development/NetBeansProjects/COMP1008_Assignment2/test/comp1008_assignment2/PieceTest.java</file>
+            <file>file:/Users/nfisher/Development/NetBeansProjects/COMP1008_Assignment2/src/comp1008_assignment2/pieceview.css</file>
             <file>file:/Users/nfisher/Development/NetBeansProjects/COMP1008_Assignment2/src/comp1008_assignment2/Piece.java</file>
             <file>file:/Users/nfisher/Development/NetBeansProjects/COMP1008_Assignment2/src/comp1008_assignment2/PieceLaunch.java</file>
             <file>file:/Users/nfisher/Development/NetBeansProjects/COMP1008_Assignment2/src/comp1008_assignment2/PieceViewController.java</file>
