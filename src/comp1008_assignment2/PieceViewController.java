@@ -108,6 +108,7 @@ public class PieceViewController implements Initializable {
         
         } catch (FileNotFoundException ex) {
                 Logger.getLogger(PieceViewController.class.getName()).log(Level.SEVERE, null, ex);
+                this.errorMessageLabel.setText(ex.getMessage());
             }
     }
 
